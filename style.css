@@ -23,7 +23,6 @@ footer {
 
 .container {
   width: 1536px;
-  border: 1px solid red;
   margin-left: auto;
   margin-right: auto;
   padding-left: 1.5rem;
@@ -337,6 +336,30 @@ header {
   padding: 10px 40px;
 }
 
+/* Footer section */
+
+#Footer{
+  width: 100vw;
+  height: 15vh;
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  align-content: center;
+  margin: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#Footer img:hover {
+  background-color: #ab8debdc;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#Footer .copy{
+  margin-top: auto;
+  margin-bottom: auto;
+}
 /* Media Query DESKTOP FIRST*/
 @media (max-width: 1536px) {
   .container {
