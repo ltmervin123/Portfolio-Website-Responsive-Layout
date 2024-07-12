@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // This function will reset the icon to its original state when the Width size is greater than 475px
     function resetIcons() {
-        if (window.innerWidth > 475) {
+        if (window.innerWidth > 768) {
             navContainer.classList.remove('active');
             hamburgerIcon.style.display = 'none';
             xIcon.style.display = 'none';

@@ -19,30 +19,25 @@ header,
 main,
 footer {
   width: 100vw;
+  height: auto;
 }
 
 .container {
   width: 1536px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  padding: 1.5rem;
   margin-bottom: 5px;
-}
-
-.navigation,
-.footer {
-  height: 10vh;
 }
 
 #navigation,
 #hero,
 #about,
 #gallery,
-#contact {
-  height: 100vh;
+#contact,
+#footer {
+  height: auto;
 }
-
 main {
   padding-top: 5rem;
 }
@@ -89,14 +84,18 @@ header {
   font-weight: bold;
   transition: 0.5s;
   color: #333333;
+  /* padding:0 0.5rem ; */
 }
 
-.navigation li {
-  padding-left: 5rem;
+
+
+.navigation li a {
+  padding: 0 2rem;
+
 }
 
 .navigation a:hover {
-  color: #7843e9;
+  background-color:#a583ee;
 }
 
 .navigation div {
@@ -107,14 +106,14 @@ header {
   align-items: center;
 }
 
-.navigation .hamburger-icon{
+.navigation .hamburger-icon {
   width: 30px;
   height: 30px;
   display: none;
   transition: 0.5s;
 }
 
-.navigation .xicon{
+.navigation .xicon {
   width: 30px;
   height: 30px;
   display: none;
@@ -193,7 +192,7 @@ header {
   align-items: center;
 }
 
-#about>h1 {
+#about > h1 {
   color: #8658e7;
   font-size: 4rem;
 }
@@ -203,13 +202,13 @@ header {
   display: flex;
 }
 
-#about .about img{
+#about .about img {
   transition: filter 0.3s ease;
   filter: grayscale(50%);
   transition: transform 0.3s ease-out;
 }
 
-#about .about img:hover{
+#about .about img:hover {
   filter: grayscale(0%);
   cursor: pointer;
   transform: translateY(-4px);
@@ -219,12 +218,10 @@ header {
   transition: filter 0.3s ease;
   filter: grayscale(50%);
 }
-#about .image img:hover{
+#about .image img:hover {
   filter: grayscale(0%);
   cursor: pointer;
-
 }
-
 
 #about .image {
   display: flex;
@@ -238,7 +235,8 @@ header {
 
 #about .about-container div {
   width: 33.33%;
-  height: 100%;
+  max-width: 100%;
+  min-height: 100%;
   padding: 20px;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
   border-radius: 10px;
@@ -264,22 +262,20 @@ header {
   align-items: center;
 }
 
-#gallery>h1 {
+#gallery > h1 {
   color: #8658e7;
   font-size: 4rem;
   text-align: center;
   margin: 0;
 }
 
-
 #gallery .image-container img {
   width: 20%;
   height: auto;
-  margin: 20px;
+  margin: 0.5rem;
   transition: transform 0.3s ease-out;
 }
-
-#gallery img:hover {
+#gallery .image-container img:hover {
   box-shadow: 0 0 10px rgba(0, 0, 0, 1);
   transform: translateY(-4px);
   cursor: pointer;
@@ -294,7 +290,7 @@ header {
 
 /* Contact Section */
 
-#contact>h1 {
+#contact > h1 {
   color: #8658e7;
   font-size: 4rem;
   text-align: center;
@@ -378,7 +374,7 @@ header {
 
 Footer {
   width: 100vw;
-  height: 15vh;
+  height: auto;
   background-color: #000;
   color: #fff;
   text-align: center;
@@ -408,7 +404,6 @@ Footer .copy {
   #contact .button {
     font-size: 1.5rem;
   }
-
 }
 
 @media (max-width: 1280px) {
@@ -450,7 +445,12 @@ Footer .copy {
     font-size: 0.8rem;
   }
 
-  #about>h1 {
+  #about > h1 {
+    font-size: 3rem;
+  }
+
+  /* Gallery section breakpoint */
+  #gallery > h1{
     font-size: 3rem;
   }
 }
@@ -461,11 +461,11 @@ Footer .copy {
   }
 
   /* Contact section break point */
-  #contact>p {
+  #contact > p {
     font-size: 1rem;
   }
 
-  #contact>h1 {
+  #contact > h1 {
     font-size: 3rem;
   }
 }
@@ -473,6 +473,36 @@ Footer .copy {
 @media (max-width: 768px) {
   .container {
     max-width: 640px;
+  }
+
+  .navigation .hamburger-icon {
+    display: unset;
+  }
+
+  .navigation .hamburger-icon:hover {
+    cursor: pointer;
+  }
+
+  .navigation ul li {
+    display: none;
+  }
+
+  .navigation div {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .navigation div.active ul li {
+    display: block;
+    padding-left: 0;
+  }
+
+  .navigation div.active .hamburger-icon {
+    display: none;
+  }
+
+  .navigation div.active .xicon {
+    display: unset;
   }
 
   .navigation li {
@@ -506,54 +536,60 @@ Footer .copy {
   /* About Section Break point */
   #about .image img {
     width: 200px;
-   
   }
+
+
 
   #about .about-container {
     font-size: 0.6rem;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
   }
 
-  #about .about-container div{
-    width: 100%;
+  #about .about, 
+  #about .image{
+    min-height: 100%;
+  }
+
+  #about .about-container div {
+    max-height: 100%;
+    width: auto;
   }
 
   #about .about img {
     width: 40px;
   }
 
-  #about>h1 {
+  #about > h1 {
+    font-size: 2rem;
+  }
+
+  /* Gallery section  */
+  #gallery > h1{
     font-size: 2rem;
   }
 
   /* Contact section */
-  #contact>p {
+  #contact > p {
     font-size: 0.7rem;
   }
-
-  /* #contact .form input {
-    width: 400px;
-    height: 50px;
-    font-size: 1rem;
-  } */
-
 
   #contact .form {
     width: 500px;
   }
 
-  #contact .button{
+  #contact .button {
     font-size: 1.5rem;
     width: auto;
     height: auto;
   }
-
-
+  #contact > h1{
+    font-size: 2rem;
+  }
 }
 
 @media (max-width: 640px) {
-
   /* Hero section break point */
   .container {
     max-width: 475px;
@@ -600,7 +636,12 @@ Footer .copy {
     width: 35px;
   }
 
-  #about>h1 {
+  #about > h1 {
+    font-size: 1.5rem;
+  }
+
+  /* Gallery */
+  #gallery > h1{
     font-size: 1.5rem;
   }
 
@@ -609,43 +650,16 @@ Footer .copy {
   #contact .form {
     width: 100%;
   }
+
+  #contact > h1{
+    font-size: 1.5rem;
+  }
 }
 
 @media (max-width: 475px) {
   .container {
     width: 100%;
   }
-
-  .navigation .hamburger-icon{
-    display: unset;
-  }
-
-  .navigation .hamburger-icon:hover{
-    cursor: pointer;
-  }
-
-  .navigation ul li{
-    display: none;
-  }
-
-  .navigation div{
-   flex-direction: column;
-   align-items: flex-end;
-  }
-
-  .navigation div.active ul li {
-    display: block;
-    padding-left: 0;
-  }
-
-  .navigation div.active .hamburger-icon {
-    display: none;
-  }
-
-  .navigation div.active .xicon {
-    display: unset;
-  }
-
 
   #hero h1 {
     font-size: 2.5rem;
