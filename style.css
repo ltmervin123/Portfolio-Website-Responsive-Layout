@@ -413,8 +413,13 @@ footer .copy {
   }
 
   .navigation div {
+    display: flex;
+  }
+
+  .navigation ul{
     flex-direction: column;
-    align-items: flex-end;
+    position: absolute;
+    right: 40%;
   }
 
   .navigation div.active ul li {
