@@ -15,39 +15,19 @@ html {
   scroll-behavior: smooth;
 }
 
-header,
-main,
-footer {
-  width: 100vw;
-  height: auto;
-}
-
-.container {
-  width: 1536px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 1.5rem;
-  margin-bottom: 5px;
-}
-
-#navigation,
-#hero,
-#about,
-#gallery,
-#contact,
-#footer {
-  height: auto;
-}
-main {
-  padding-top: 5rem;
-}
-
 body {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   color: #333333;
+}
+
+header,
+main,
+footer {
+  width: 100vw;
+  height: auto;
 }
 
 header {
@@ -60,8 +40,26 @@ header {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
-/* Navigation */
+.container {
+  width: 1536px;
+  margin: 0 auto 5px;
+  padding: 1.5rem;
+}
 
+#navigation,
+#hero,
+#about,
+#gallery,
+#contact,
+#footer {
+  height: auto;
+}
+
+main {
+  padding-top: 5rem;
+}
+
+/* Navigation */
 .navigation {
   display: flex;
   align-items: center;
@@ -72,66 +70,48 @@ header {
   width: 100px;
 }
 
-.navigation ul li,
-.navigation ul a,
 .navigation ul {
-  text-decoration: none;
-  list-style-type: none;
   display: flex;
   justify-content: center;
   align-items: center;
+  list-style-type: none;
+}
+
+.navigation ul li {
+  padding: 0 2rem;
+}
+
+.navigation a {
+  text-decoration: none;
   font-size: 1.5rem;
   font-weight: bold;
   transition: 0.5s;
   color: #333333;
-  /* padding:0 0.5rem ; */
-}
-
-
-
-.navigation li a {
-  padding: 0 2rem;
-
 }
 
 .navigation a:hover {
-  background-color:#a583ee;
+  background-color: #a583ee;
 }
 
-.navigation div {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
-
-.navigation .hamburger-icon {
-  width: 30px;
-  height: 30px;
-  display: none;
-  transition: 0.5s;
-}
-
+.navigation .hamburger-icon,
 .navigation .xicon {
   width: 30px;
   height: 30px;
   display: none;
   transition: 0.5s;
 }
-/* Hero */
 
+/* Hero */
 #hero {
   display: flex;
-  justify-content: center;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   background-color: #fafafa;
 }
 
 #hero h1 {
   font-size: 6rem;
-  margin: 0;
   font-weight: 800;
   margin: 0;
 }
@@ -142,7 +122,6 @@ header {
 
 #hero p {
   font-size: 1.5rem;
-  margin: 0;
 }
 
 #hero .button {
@@ -165,16 +144,15 @@ header {
 }
 
 #hero .social {
-  margin-top: 2rem;
-  background-color: #fafafa;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  border-radius: 5px;
   width: 215px;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding: 5px;
+  margin-top: 2rem;
+  background-color: #fafafa;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
 }
 
 #hero .social img:hover {
@@ -185,58 +163,48 @@ header {
 
 /* About Section */
 #about {
-  background-color: #fff;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+  background-color: #fff;
 }
 
 #about > h1 {
-  color: #8658e7;
   font-size: 4rem;
+  color: #8658e7;
 }
 
 #about .about-container {
-  width: 100%;
   display: flex;
+  width: 100%;
+  gap: 10px;
+  transition: filter 0.3s ease, transform 0.3s ease-out;
 }
-
-#about .about img {
-  transition: filter 0.3s ease;
+#about .about-container .about img{
   filter: grayscale(50%);
-  transition: transform 0.3s ease-out;
+  transition: filter 0.3s ease, transform 0.3s ease-out;
+}
+#about .about-container .about img:hover{
+  filter: grayscale(0%);
+  transform: translateY(-4px);
+  cursor: pointer;
 }
 
-#about .about img:hover {
-  filter: grayscale(0%);
-  cursor: pointer;
-  transform: translateY(-4px);
-}
 #about .image img {
   width: 300px;
-  transition: filter 0.3s ease;
   filter: grayscale(50%);
+  transition: filter 0.3s ease, transform 0.3s ease-out;
 }
+
 #about .image img:hover {
   filter: grayscale(0%);
+  transform: translateY(-4px);
   cursor: pointer;
-}
-
-#about .image {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#about .about-container {
-  gap: 10px;
 }
 
 #about .about-container div {
   width: 33.33%;
-  max-width: 100%;
-  min-height: 100%;
   padding: 20px;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
   border-radius: 10px;
@@ -255,18 +223,23 @@ header {
 
 /* Gallery Section */
 #gallery {
-  background-color: #fafafa;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+  background-color: #fafafa;
 }
 
 #gallery > h1 {
-  color: #8658e7;
   font-size: 4rem;
+  color: #8658e7;
   text-align: center;
-  margin: 0;
+}
+
+#gallery .image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #gallery .image-container img {
@@ -275,28 +248,14 @@ header {
   margin: 0.5rem;
   transition: transform 0.3s ease-out;
 }
+
 #gallery .image-container img:hover {
   box-shadow: 0 0 10px rgba(0, 0, 0, 1);
   transform: translateY(-4px);
   cursor: pointer;
 }
 
-#gallery div .image-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-
 /* Contact Section */
-
-#contact > h1 {
-  color: #8658e7;
-  font-size: 4rem;
-  text-align: center;
-  margin: 0;
-}
-
 #contact {
   display: flex;
   flex-direction: column;
@@ -304,55 +263,43 @@ header {
   align-items: center;
 }
 
+#contact > h1 {
+  font-size: 4rem;
+  color: #8658e7;
+  text-align: center;
+}
+
 #contact .form {
-  margin-top: 30px;
   display: flex;
-  height: 70%;
   flex-direction: column;
   justify-content: center;
   gap: 20px;
-  background-color: #fff;
+  width: 600px;
+  height: 70%;
   padding: 3% 5%;
+  margin-top: 30px;
+  background-color: #fff;
   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.5);
   border-radius: 20px;
-  width: 600px;
 }
 
-#contact .form input {
+#contact .form input,
+#contact .form textarea {
+  width: 100%;
+  margin: 0;
+  padding: 10px;
+  font-size: 1rem;
   background-color: #fafafa;
   border: none;
-  width: 100%;
-  font-size: 1rem;
-  margin: 0;
-  padding-left: 10px;
   border-radius: 5px;
-  padding-bottom: 10px;
-  padding-top: 10px;
 }
 
-#contact .form input:focus {
-  outline: none;
-}
-
+#contact .form input:focus,
 #contact .form textarea:focus {
   outline: none;
 }
 
-#contact textarea {
-  background-color: #fafafa;
-  border: none;
-  font-size: 1rem;
-  margin: 0;
-  padding-left: 10px;
-  resize: none;
-  border-radius: 5px;
-}
-
-#contact p {
-  font-size: 1.5rem;
-  margin: 0;
-}
-
+#contact p,
 #contact h3 {
   margin: 0;
 }
@@ -364,38 +311,31 @@ header {
   border: 5px solid #5e1fe4;
   font-size: 1.7rem;
   border-radius: 10px;
-  transition: transform 0.3s ease-out;
-  margin-left: auto;
-  margin-right: auto;
   padding: 5px 25px;
+  margin: auto;
+  transition: transform 0.3s ease-out;
 }
 
-/* Footer section */
-
-Footer {
+/* Footer Section */
+footer {
   width: 100vw;
   height: auto;
   background-color: #000;
   color: #fff;
   text-align: center;
-  align-content: center;
-  margin: 0;
-  margin-left: auto;
-  margin-right: auto;
 }
 
-Footer img:hover {
+footer img:hover {
   background-color: #ab8debdc;
   border-radius: 5px;
   cursor: pointer;
 }
 
-Footer .copy {
-  margin-top: auto;
-  margin-bottom: auto;
+footer .copy {
+  margin: auto;
 }
 
-/* Media Query DESKTOP FIRST*/
+/* Media Queries */
 @media (max-width: 1536px) {
   .container {
     max-width: 1280px;
@@ -411,7 +351,6 @@ Footer .copy {
     max-width: 1024px;
   }
 
-  /* Hero section breakpoint */
   #hero h1 {
     font-size: 5rem;
   }
@@ -425,18 +364,10 @@ Footer .copy {
   }
 
   #hero .social img {
-    width: 90px;
-    height: 90px;
-  }
-
-  #hero .social img {
     width: 55px;
     height: 55px;
   }
 
-  /* ********************* */
-
-  /* About Section Break point */
   #about .image img {
     width: 240px;
   }
@@ -449,8 +380,7 @@ Footer .copy {
     font-size: 3rem;
   }
 
-  /* Gallery section breakpoint */
-  #gallery > h1{
+  #gallery > h1 {
     font-size: 3rem;
   }
 }
@@ -460,7 +390,6 @@ Footer .copy {
     max-width: 768px;
   }
 
-  /* Contact section break point */
   #contact > p {
     font-size: 1rem;
   }
@@ -476,11 +405,7 @@ Footer .copy {
   }
 
   .navigation .hamburger-icon {
-    display: unset;
-  }
-
-  .navigation .hamburger-icon:hover {
-    cursor: pointer;
+    display: block;
   }
 
   .navigation ul li {
@@ -502,7 +427,7 @@ Footer .copy {
   }
 
   .navigation div.active .xicon {
-    display: unset;
+    display: block;
   }
 
   .navigation li {
@@ -525,54 +450,28 @@ Footer .copy {
     font-size: 1.3rem;
   }
 
-  #hero .social {
-    width: auto;
-    padding-left: 5px;
-    padding-right: 5px;
-  }
-
-  /* ************ */
-
-  /* About Section Break point */
   #about .image img {
     width: 200px;
   }
 
-
-
   #about .about-container {
-    font-size: 0.6rem;
     flex-direction: row;
     flex-wrap: wrap;
+    font-size: 0.6rem;
     justify-content: flex-start;
   }
 
-  #about .about, 
-  #about .image{
-    min-height: 100%;
-  }
-
   #about .about-container div {
-    max-height: 100%;
     width: auto;
-  }
-
-  #about .about img {
-    width: 40px;
+    max-height: 100%;
   }
 
   #about > h1 {
     font-size: 2rem;
   }
 
-  /* Gallery section  */
-  #gallery > h1{
+  #gallery > h1 {
     font-size: 2rem;
-  }
-
-  /* Contact section */
-  #contact > p {
-    font-size: 0.7rem;
   }
 
   #contact .form {
@@ -581,16 +480,14 @@ Footer .copy {
 
   #contact .button {
     font-size: 1.5rem;
-    width: auto;
-    height: auto;
   }
-  #contact > h1{
+
+  #contact > h1 {
     font-size: 2rem;
   }
 }
 
 @media (max-width: 640px) {
-  /* Hero section break point */
   .container {
     max-width: 475px;
   }
@@ -620,10 +517,6 @@ Footer .copy {
     height: 50px;
   }
 
-  /* ************* */
-
-  /* About section break point */
-
   #about .image img {
     width: 140px;
   }
@@ -632,26 +525,19 @@ Footer .copy {
     font-size: 0.4rem;
   }
 
-  #about .about img {
-    width: 35px;
-  }
-
   #about > h1 {
     font-size: 1.5rem;
   }
 
-  /* Gallery */
-  #gallery > h1{
+  #gallery > h1 {
     font-size: 1.5rem;
   }
-
-  /* Contact Section */
 
   #contact .form {
     width: 100%;
   }
 
-  #contact > h1{
+  #contact > h1 {
     font-size: 1.5rem;
   }
 }
@@ -671,10 +557,6 @@ Footer .copy {
 
   #hero .button {
     font-size: 0.7rem;
-  }
-
-  #hero .social {
-    width: auto;
   }
 
   #hero .social img {
@@ -706,12 +588,7 @@ Footer .copy {
 
   #hero .button {
     font-size: 0.5rem;
-    padding-left: 30px;
-    padding-right: 30px;
-  }
-
-  #hero .social {
-    width: auto;
+    padding: 0 30px;
   }
 
   #hero .social img {
