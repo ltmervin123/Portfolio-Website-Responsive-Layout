@@ -107,6 +107,19 @@ header {
   align-items: center;
 }
 
+.navigation .hamburger-icon{
+  width: 30px;
+  height: 30px;
+  display: none;
+  transition: 0.5s;
+}
+
+.navigation .xicon{
+  width: 30px;
+  height: 30px;
+  display: none;
+  transition: 0.5s;
+}
 /* Hero */
 
 #hero {
@@ -602,6 +615,37 @@ Footer .copy {
   .container {
     width: 100%;
   }
+
+  .navigation .hamburger-icon{
+    display: unset;
+  }
+
+  .navigation .hamburger-icon:hover{
+    cursor: pointer;
+  }
+
+  .navigation ul li{
+    display: none;
+  }
+
+  .navigation div{
+   flex-direction: column;
+   align-items: flex-end;
+  }
+
+  .navigation div.active ul li {
+    display: block;
+    padding-left: 0;
+  }
+
+  .navigation div.active .hamburger-icon {
+    display: none;
+  }
+
+  .navigation div.active .xicon {
+    display: unset;
+  }
+
 
   #hero h1 {
     font-size: 2.5rem;
