@@ -2,7 +2,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     var hamburgerIcon = document.getElementById('hamburger-icon');
     var xIcon = document.getElementById('xicon');
-    var navContainer = document.getElementById('nav-container');
+    var navContainer = document.getElementById('side-bar');
 
     // This function handle the toggle of the Hamburger icon 
     function toggleMenu() {
